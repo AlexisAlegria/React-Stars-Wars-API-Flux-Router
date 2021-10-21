@@ -16,11 +16,11 @@ export const Planetas = () => {
 				{store.planetsList.map((item, index) => {
 					const dataPlanetas = [
 						{
-							label: "Gravedad",
-							value: item.gravity
+							label: "Climate",
+							value: item.climate
 						},
 						{
-							label: "Terreno",
+							label: "Terrain",
 							value: item.terrain
 						}
 					];
