@@ -7,7 +7,7 @@ import { Planetas } from "../views/planetas";
 
 export const Home = () => {
 	return (
-		<div>
+		<div className="container">
 			<div className="personajespage">
 				<Personajes />
 			</div>

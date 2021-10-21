@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<nav className="navbar navbar-light bg-light mb-3 px-5">
+		<nav className="navbar navbar-dark bg-dark mb-3 px-5">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">
 					<img
-						className="logosw w-25"
-						src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Star_wars2.svg"
+						className="logosw w-125"
+						// src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Star_wars2.svg"
+						src="https://static.wikia.nocookie.net/starwars/images/c/cc/Star-wars-logo-new-tall.jpg"
 					/>
 				</span>
 			</Link>
