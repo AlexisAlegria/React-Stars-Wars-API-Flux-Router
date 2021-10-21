@@ -1,20 +1,91 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			peopleList: [],
+			urlPeople: "https://swapi.dev/api/people/",
+			details: [],
+			detail: [],
+			planetsList: [],
+			urlPlanetas: "https://swapi.dev/api/planets/",
+			vehiclesList: [],
+			urlVehiculos: "https://swapi.dev/api/vehicles/",
+			favoritesList: []
 		},
 		actions: {
+			setUrldetail: urlDetail => {
+				fetch(urlDetail)
+					.then(response => {
+						if (!response.ok) {
+							throw Error(response.statusText);
+						}
+						return response.json();
+					})
+					.then(responseAsJson => {
+						setStore({ details: responseAsJson.result.properties });
+					});
+			},
+			setfavorites: titulofav => {
+				const store = getStore();
+				if (store.favoritesList.includes(titulofav) === false) {
+					setStore({ favoritesList: [...store.favoritesList, titulofav] });
+				}
+			},
+			setEliminarFavoritos: titulofav => {
+				setStore({ favoritesList: getStore().favoritesList.filter(favorites => favorites !== titulofav) });
+			},
+			fetchDetail: () => {
+				const store = getStore();
+				const URL = store.detail;
+				const OBJCONFIG = {
+					method: "GET",
+					headers: {
+						"Content-type": "aplication/json"
+					}
+				};
+
+				fetch(URL, OBJCONFIG)
+					.then(res => res.json()) //Texto plano
+					.then(data => setStore({ detailData: data })); //Obtienes los datos
+			},
+			fetchPeople: () => {
+				const URL = "https://swapi.dev/api/people";
+				const OBJCONFIG = {
+					method: "GET",
+					headers: {
+						"Content-type": "aplication/json"
+					}
+				};
+
+				fetch(URL, OBJCONFIG)
+					.then(res => res.json()) //Texto plano
+					.then(data => setStore({ peopleList: data.results })); //Obtienes los datos
+			},
+			fetchPlanetas: () => {
+				const URL = "https://swapi.dev/api/planets/";
+				const OBJCONFIG = {
+					method: "GET",
+					headers: {
+						"Content-type": "aplication/json"
+					}
+				};
+
+				fetch(URL, OBJCONFIG)
+					.then(res => res.json()) //Texto plano
+					.then(data => setStore({ planetsList: data.results })); //Obtienes los datos
+			},
+			fetchVehiculos: () => {
+				const URL = "https://swapi.dev/api/vehicles/";
+				const OBJCONFIG = {
+					method: "GET",
+					headers: {
+						"Content-type": "aplication/json"
+					}
+				};
+
+				fetch(URL, OBJCONFIG)
+					.then(res => res.json()) //Texto plano
+					.then(data => setStore({ vehiclesList: data.results })); //Obtienes los datos
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
