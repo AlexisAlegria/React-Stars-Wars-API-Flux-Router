@@ -16,12 +16,12 @@ export const Personajes = () => {
 				{store.peopleList.map((item, index) => {
 					const dataPeople = [
 						{
-							label: "Genero",
+							label: "Gender",
 							value: item.gender
 						},
 						{
-							label: "Cabello",
-							value: item.hair_color
+							label: "Height",
+							value: item.height
 						}
 					];
 					return (

@@ -20,7 +20,7 @@ export const Vehiculos = () => {
 							value: item.model
 						},
 						{
-							label: "Manufactura",
+							label: "Manufacturer",
 							value: item.manufacturer
 						}
 					];
@@ -28,9 +28,7 @@ export const Vehiculos = () => {
 						<Card
 							key={index}
 							title={item.name}
-							imagen="https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg"
-							/* model={item.model}
-							manufacturer={item.manufacturer} */
+							imagen="https://lumiere-a.akamaihd.net/v1/images/X-Wing-Fighter_47c7c342.jpeg?region=0%2C1%2C1536%2C864&width=768"
 							link={item.url}
 							contenido={dataVehicles}
 							category={"/vehicles/"}
