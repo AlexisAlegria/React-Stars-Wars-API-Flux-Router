@@ -33,15 +33,15 @@ export const Navbar = () => {
 							aria-expanded="false">
 							Favorites {store.favoritesList.length}
 						</button>
-						<ul className="dropdown-menu  dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+						<ul className="dropdown-menu  dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
 							{store.favoritesList.map((item, index) => {
 								return (
 									<li
 										key={index}
-										className="list-group-item list-group-item-action d-flex justify-content-between">
+										className="list-group-item list-group-item-action d-flex justify-content-between dropdown-item">
 										{item}
 										<span>
-											<a>
+											<a className="dropdown-item">
 												<i
 													onClick={() => {
 														actions.setEliminarFavoritos(item);

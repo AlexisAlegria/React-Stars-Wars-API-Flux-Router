@@ -10,7 +10,7 @@ export const Planetas = () => {
 	}, []);
 
 	return (
-		<div className="container">
+		<div className="container mt-5">
 			<h1 className="mb-3">Planets</h1>
 			<div className="row flex-row flex-nowrap overflow-auto">
 				{store.planetsList.map((item, index) => {

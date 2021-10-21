@@ -12,7 +12,7 @@ export const Personajes = () => {
 	return (
 		<div className="container">
 			<h1 className="mb-3">Characters</h1>
-			<div className="row flex-row flex-nowrap overflow-auto">
+			<div className="row flex-row flex-nowrap overflow-auto ">
 				{store.peopleList.map((item, index) => {
 					const dataPeople = [
 						{

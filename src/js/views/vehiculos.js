@@ -10,7 +10,7 @@ export const Vehiculos = () => {
 	}, []);
 
 	return (
-		<div className="container">
+		<div className="container mt-5">
 			<h1 className="mb-3">Vehicles</h1>
 			<div className="row flex-row flex-nowrap overflow-auto">
 				{store.vehiclesList.map((item, index) => {
