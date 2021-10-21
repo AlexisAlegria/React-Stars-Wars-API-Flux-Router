@@ -2,36 +2,38 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Card } from "../component/card";
 
-export const Personajes = () => {
+export const Planetas = () => {
 	const { store, actions } = useContext(Context);
 
 	useEffect(() => {
-		actions.fetchPeople();
+		actions.fetchPlanetas();
 	}, []);
 
 	return (
 		<div className="container">
-			<h1 className="mb-3">Characters</h1>
+			<h1 className="mb-3">Planets</h1>
 			<div className="row flex-row flex-nowrap overflow-auto">
-				{store.peopleList.map((item, index) => {
-					const dataPeople = [
+				{store.planetsList.map((item, index) => {
+					const dataPlanetas = [
 						{
-							label: "Genero",
-							value: item.gender
+							label: "Gravedad",
+							value: item.gravity
 						},
 						{
-							label: "Cabello",
-							value: item.hair_color
+							label: "Terreno",
+							value: item.terrain
 						}
 					];
 					return (
 						<Card
 							key={index}
 							title={item.name}
-							imagen="https://dam.smashmexico.com.mx/wp-content/uploads/2018/03/Star-Wars-1024x576.jpg"
+							imagen="https://starwarsblog.starwars.com/wp-content/uploads/2015/01/Coruscant.jpeg"
+							/*gravity={item.gravity}
+							terrain={item.terrain}*/
 							link={item.url}
-							contenido={dataPeople}
-							category={"/people/"}
+							contenido={dataPlanetas}
+							category={"/planets/"}
 							id={index}
 						/>
 					);

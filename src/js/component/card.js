@@ -23,12 +23,10 @@ export const Card = props => {
 							);
 						})}
 					</p>
-					<Link to={props.category + props.id} className="btn btn-outline-primary">
-						Detalle
+					<Link to={props.category + props.id} className="btn btn-primary">
+						Details
 					</Link>
-					<button
-						onClick={() => actions.setfavorites(props.title)}
-						className="btn btn-outline-warning float-right">
+					<button onClick={() => actions.setfavorites(props.title)} className="btn btn-dark float-right">
 						<i className="fa fa-heart" />
 					</button>
 				</div>

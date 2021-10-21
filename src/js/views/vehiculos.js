@@ -11,7 +11,7 @@ export const Vehiculos = () => {
 
 	return (
 		<div className="container">
-			<h1 className="mb-3">Vehiculos</h1>
+			<h1 className="mb-3">Vehicles</h1>
 			<div className="row flex-row flex-nowrap overflow-auto">
 				{store.vehiclesList.map((item, index) => {
 					const dataVehicles = [

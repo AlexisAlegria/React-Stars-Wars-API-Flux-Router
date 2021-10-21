@@ -44,8 +44,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				fetch(URL, OBJCONFIG)
-					.then(res => res.json()) //Texto plano
-					.then(data => setStore({ detailData: data })); //Obtienes los datos
+					.then(res => res.json()) //flat text
+					.then(data => setStore({ detailData: data })); //get data
 			},
 			fetchPeople: () => {
 				const URL = "https://swapi.dev/api/people";
@@ -57,8 +57,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				fetch(URL, OBJCONFIG)
-					.then(res => res.json()) //Texto plano
-					.then(data => setStore({ peopleList: data.results })); //Obtienes los datos
+					.then(res => res.json()) //flat text
+					.then(data => setStore({ peopleList: data.results })); //get data
 			},
 			fetchPlanetas: () => {
 				const URL = "https://swapi.dev/api/planets/";
@@ -70,8 +70,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				fetch(URL, OBJCONFIG)
-					.then(res => res.json()) //Texto plano
-					.then(data => setStore({ planetsList: data.results })); //Obtienes los datos
+					.then(res => res.json()) //flat text
+					.then(data => setStore({ planetsList: data.results })); //get data
 			},
 			fetchVehiculos: () => {
 				const URL = "https://swapi.dev/api/vehicles/";

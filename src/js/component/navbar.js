@@ -8,15 +8,21 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">
-					<img className="logosw" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Star_wars2.svg" />
+					<img
+						className="logosw w-25"
+						src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Star_wars2.svg"
+					/>
 				</span>
 			</Link>
 			<div className="ml-auto">
 				<Link to="/personajes">
-					<button className="btn btn-light mx-3">Personajes</button>
+					<button className="btn btn-light mx-3">Characters</button>
 				</Link>
 				<Link to="/vehiculos">
-					<button className="btn btn-light mx-3">Vehiculos</button>
+					<button className="btn btn-light mx-3">Vehicles</button>
+				</Link>
+				<Link to="/planetas">
+					<button className="btn btn-light mx-3">Planets</button>
 				</Link>
 			</div>
 		</nav>
