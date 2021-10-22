@@ -5,6 +5,26 @@ import starsWarsImage from "../../img/stars-wars-title.png";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
+	// console.log(store);
+	const listFavorites =
+		store.favoritesList &&
+		store.favoritesList.map((item, index) => {
+			return (
+				<li key={index}>
+					{item}
+					<span>
+						<a
+							className="dropdown-item"
+							onClick={() => {
+								actions.setEliminarFavoritos(item);
+							}}>
+							<i className="far fa-trash-alt" />
+						</a>
+					</span>
+				</li>
+			);
+		});
+
 	return (
 		<div className="container">
 			<nav className="navbar navbar-dark bg-dark mb-3 px-1 justify-content-between">
@@ -23,38 +43,19 @@ export const Navbar = () => {
 					<Link to="/planetas">
 						<button className="btn btn-light mx-3">Planets</button>
 					</Link>
-					<Link className="dropdown">
+					<div className="dropdown">
 						<button
 							className="btn btn-warning dropdown-toggle mx-3"
 							type="button"
 							id="dropdownMenuButton1"
 							data-bs-toggle="dropdown"
-							aria-haspopup="true"
 							aria-expanded="false">
-							Favorites {store.favoritesList.length}
+							Favorites {store.favoritesList.length > 0 && store.favoritesList.length}
 						</button>
-						<ul className="dropdown-menu  dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-							{store.favoritesList.map((item, index) => {
-								return (
-									<li
-										key={index}
-										className="list-group-item list-group-item-action d-flex justify-content-between dropdown-item">
-										{item}
-										<span>
-											<a className="dropdown-item">
-												<i
-													onClick={() => {
-														actions.setEliminarFavoritos(item);
-													}}
-													className="far fa-trash-alt"
-												/>
-											</a>
-										</span>
-									</li>
-								);
-							})}
+						<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							{listFavorites && listFavorites}
 						</ul>
-					</Link>
+					</div>
 				</div>
 			</nav>
 		</div>
