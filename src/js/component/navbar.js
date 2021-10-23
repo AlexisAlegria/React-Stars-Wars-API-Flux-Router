@@ -5,12 +5,11 @@ import starsWarsImage from "../../img/stars-wars-title.png";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-	// console.log(store);
 	const listFavorites =
 		store.favoritesList &&
 		store.favoritesList.map((item, index) => {
 			return (
-				<li key={index}>
+				<li className="lidropdown" key={index}>
 					{item}
 					<span>
 						<a
@@ -33,7 +32,7 @@ export const Navbar = () => {
 						<img className="logosw w-75 ms-3" src={starsWarsImage} />
 					</Link>
 				</div>
-				<div className="col-auto">
+				<div className="col-6">
 					<Link to="/personajes">
 						<button className="btn btn-light mx-3">Characters</button>
 					</Link>
@@ -43,7 +42,7 @@ export const Navbar = () => {
 					<Link to="/planetas">
 						<button className="btn btn-light mx-3">Planets</button>
 					</Link>
-					<div className="dropdown">
+					<Link className="dropdown">
 						<button
 							className="btn btn-warning dropdown-toggle mx-3"
 							type="button"
@@ -55,7 +54,7 @@ export const Navbar = () => {
 						<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 							{listFavorites && listFavorites}
 						</ul>
-					</div>
+					</Link>
 				</div>
 			</nav>
 		</div>

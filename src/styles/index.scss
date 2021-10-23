@@ -5,6 +5,19 @@
 h1{
     color: whitesmoke;
 }
+.card{
+    background: #212529;
+    color: whitesmoke;
+}
+.lidropdown{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.fa-trash-alt:hover{
+    color:orangered;
+    transition: all 0.2s ease;
+}
 #footer-text{
     color: whitesmoke;
     letter-spacing: 1px;
