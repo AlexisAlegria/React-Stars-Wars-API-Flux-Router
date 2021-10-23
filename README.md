@@ -22,6 +22,11 @@ $ cp .env.example .env
 ```bash
 $ npm run start
 ```
+npm i @popperjs/core
+
+write in index.js
+import "@popperjs/core";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 ### Styles
 You can update the `styles/index.scss` or create new `.scss` files inside `styles/` and import them into your current scss or js files depending on your needs.
